@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .main.container.clearfix
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4
+          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+          | Welcome Mr Principal
+        //- h2.favorite-book Favorite Book
+        //- | #{favorite}
+            h1 Orders Placed by YOU
+    h1 Orders Awaiting Your Approval
+    table.table
+        thead
+            tr
+            th(scope='col') item id
+            th(scope='col') item name
+            th(scope='col') Quantity
+        tbody
+          each order in orders
+            tr
+              th(scope='row')=id+=1
+              td= order.itemName
+              td= order.quantity
+              td
+                .btn.btn-info.pull-md-right Approve
+                .btn.btn-info.pull-md-right Reject
+                
+
+    
