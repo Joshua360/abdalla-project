@@ -1,19 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
+const Teacher = require('../models/teacher');
 const mid = require("../middleware");
 
 
 
 
-
-
-// GET /
-router.get('/register', mid.loggedOut, function(req, res, next) {
-  console.log(req.session.userId)
-  return res.render('register', {title: "Sign Up"});
-  });
-  
   // POST /
   router.post('/register', function(req, res, next) {
     if(
